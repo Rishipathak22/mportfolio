@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishi Pathak — Portfolio</title>
+    <meta name="description" content="Portfolio of Rishi Pathak — BCA Graduate, Web Developer, Tech Enthusiast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="backdrop" aria-hidden="true"></div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">RP</div>
+        <div>Rishi Pathak</div>
+      </div>
+      <nav class="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="mode" class="btn ghost" title="Toggle theme">🌗 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div>
+        <span class="chip">BCA Graduate • Web Developer</span>
+        <h1>Hi, I'm <span style="color:var(--accent)">Rishi</span> —
+          <span id="type">Building clean, fast websites.</span>
+        </h1>
+        <p class="sub">Focused on front‑end and lightweight back‑end. Open to roles in India and Dubai — IT Support, Web Dev, and Junior Engineer positions.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">🚀 View Projects</a>
+          <a class="btn ghost" href="#contact">📩 Contact</a>
+          <a class="btn ghost" href="assets/Rishi_Pathak_CV.pdf" download>⬇️ Download CV</a>
+        </div>
+        <div class="row" style="margin-top:18px">
+          <div class="card stat"><span>💼</span><div><strong>6+</strong><div style="color:var(--muted)">Mini projects</div></div></div>
+          <div class="card stat"><span>⚡</span><div><strong>100%</strong><div style="color:var(--muted)">Responsive design</div></div></div>
+          <div class="card stat"><span>🌍</span><div><strong>Open</strong><div style="color:var(--muted)">to relocate</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="pfp">
+          <!-- Replace src with your photo -->
+          <img src="IMG-20240605-WA0007.jpg" alt="Rishi Pathak Portrait placeholder"
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <span class="chip">Based in India • Ready for Dubai</span>
+      </div>
+      <div class="card">
+        <p>
+          I'm a BCA graduate passionate about crafting user‑friendly interfaces and reliable back‑ends. I enjoy <strong>HTML, CSS, JavaScript</strong> on the front‑end and use <strong>Python/Node & SQL</strong> on the back‑end for small services. I care about clean code, accessibility, and performance.
+        </p>
+        <p style="color:var(--muted)">
+          When I'm not coding, I learn new tools, practice UI/UX, and explore tech that improves daily life.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <a class="chip" href="#contact">Available for freelance</a>
+      </div>
+
+      <div class="grid cols-3">
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>HTML & CSS</strong><span>Advanced</span>
+          </div>
+          <div class="meter" data-level="90"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>JavaScript</strong><span>Intermediate</span>
+          </div>
+          <div class="meter" data-level="80"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>Python</strong><span>Intermediate</span>
+          </div>
+          <div class="meter" data-level="70"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>SQL</strong><span>Intermediate</span>
+          </div>
+          <div class="meter" data-level="70"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>Git & GitHub</strong><span>Working</span>
+          </div>
+          <div class="meter" data-level="60"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>UI/UX</strong><span>Working</span>
+          </div>
+          <div class="meter" data-level="60"><span></span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="skill-chips">
+        <span class="chip">Responsive Design</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Basics of React</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Bootstrap/Tailwind</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <a class="chip" href="https://github.com/" target="_blank" rel="noopener">More on GitHub ↗</a>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="project card">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Screenshot placeholder 1"/>
+          </div>
+          <div class="meta">
+            <h3>Ayodhya Service — Booking Web App</h3>
+            <p style="color:var(--muted)">Hotel, car and restaurant booking MVP with responsive UI and simple JSON back‑end.</p>
+            <div class="row">
+              <a class="btn ghost" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost" href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project card">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Screenshot placeholder 2"/>
+          </div>
+          <div class="meta">
+            <h3>TransX — Simple Transaction App</h3>
+            <p style="color:var(--muted)">Android + Web dashboard concept to add, view and export transactions.</p>
+            <div class="row">
+              <a class="btn ghost" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost" href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project card">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Screenshot placeholder 3"/>
+          </div>
+          <div class="meta">
+            <h3>Portfolio Template — This Site</h3>
+            <p style="color:var(--muted)">Clean single‑file portfolio with dark/light mode, glassmorphism and animations.</p>
+            <div class="row">
+              <a class="btn ghost" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost" href="source.code.txt" target="_blank">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span class="chip">Let's build something great</span>
+      </div>
+      <div class="card contact-card">
+        <a class="btn ghost" href="mailto:djrxremix143@gmail.com">✉️ Email</a>
+        <a class="btn ghost" href="https://wa.me/917388385690" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="btn ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a class="btn ghost" href="tel:+917388385690">📞 Phone</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px">
+      <div>© <span id="year"></span> Rishi Pathak • Built with ❤️</div>
+      <div style="display:flex; gap:10px">
+        <a class="chip" href="#home">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
