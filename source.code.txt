@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rishi Pathak — Portfolio</title>
+  <meta name="description" content="Portfolio of Rishi Pathak — BCA Graduate, Web Developer, Tech Enthusiast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020; /* dark indigo */
+      --panel: rgba(255,255,255,0.08);
+      --panel-light: rgba(255,255,255,0.12);
+      --text: #e6e9f2;
+      --muted: #b9c0d9;
+      --brand: #7c5cff; /* violet */
+      --accent: #2ee6a6; /* teal */
+      --ring: rgba(124,92,255,.35);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .light{
+      --bg:#f7f8ff;
+      --panel: rgba(15,23,42,0.06);
+      --panel-light: rgba(15,23,42,0.08);
+      --text:#0b1020;
+      --muted:#475569;
+      --ring: rgba(124,92,255,.25);
+      --shadow: 0 10px 20px rgba(17,24,39,.10);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text); background: var(--bg); overflow-x:hidden;
+    }
+    /* Animated gradient backdrop */
+    .backdrop{
+      position:fixed; inset: -20vmax; filter: blur(80px); z-index:-1; opacity:.65; pointer-events:none;
+      background: radial-gradient(40vmax 40vmax at 15% 25%, rgba(124,92,255,.45), transparent 60%),
+                  radial-gradient(30vmax 30vmax at 85% 20%, rgba(46,230,166,.33), transparent 60%),
+                  radial-gradient(35vmax 35vmax at 60% 85%, rgba(255,115,170,.25), transparent 60%);
+      animation: float 18s ease-in-out infinite alternate;
+    }
+    @keyframes float{
+      0%{ transform: translate3d(0,0,0) rotate(0deg) }
+      100%{ transform: translate3d(2vw,-1vh,0) rotate(2deg) }
+    }
+    a{ color:inherit; text-decoration:none }
+    .container{ width:min(1100px, 92%); margin-inline:auto }
+    header{
+      position:sticky; top:0; z-index:20; backdrop-filter: blur(10px); border-bottom:1px solid var(--panel-light);
+      background: linear-gradient(to bottom, rgba(10,12,24,.75), rgba(10,12,24,.35));
+    }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0 }
+    .brand{ display:flex; align-items:center; gap:12px; font-weight:700 }
+    .logo{ width:38px; height:38px; display:grid; place-items:center; border-radius:12px; background:linear-gradient(135deg, var(--brand), var(--accent)); color:white; box-shadow: var(--shadow) }
+    .navlinks{ display:flex; gap:22px; align-items:center }
+    .navlinks a{ padding:10px 12px; border-radius:12px; transition:.2s ease; color:var(--muted) }
+    .navlinks a:hover{ background:var(--panel); color:var(--text) }
+    .btn{ display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; border:1px solid transparent; font-weight:600; letter-spacing:.2px; cursor:pointer; transition: .2s ease; box-shadow: var(--shadow) }
+    .btn.primary{ background: linear-gradient(135deg,var(--brand), #5f3bff); color:white }
+    .btn.ghost{ background:var(--panel); color:var(--text); border-color:var(--panel-light) }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 12px 30px var(--ring) }
+    .chip{ display:inline-block; padding:8px 12px; border-radius:999px; background:var(--panel); border:1px solid var(--panel-light); color:var(--muted); font-weight:600; letter-spacing:.3px }
+
+    /* Hero */
+    .hero{ display:grid; grid-template-columns: 1.2fr .8fr; gap:40px; align-items:center; padding:64px 0 40px }
+    .hero h1{ font-family:Poppins,Inter; font-size: clamp(2.2rem, 6vw, 3.6rem); line-height:1.1; margin:0 0 12px }
+    .sub{ font-size: clamp(1rem, 2.2vw, 1.25rem); color:var(--muted); margin-bottom:22px }
+    .cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:18px }
+    .card{ background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid var(--panel-light); border-radius:22px; padding:22px; box-shadow: var(--shadow) }
+    .stat{ display:flex; gap:14px; align-items:center }
+    .stat strong{ font-size:1.4rem }
+
+    .pfp{
+      width:100%; aspect-ratio: 1/1; border-radius:24px; overflow:hidden; position:relative; border:1px solid var(--panel-light);
+      background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(46,230,166,.25));
+    }
+    .pfp img{ width:100%; height:100%; object-fit:cover; mix-blend:luminosity; opacity:.95 }
+
+    /* Sections */
+    section{ padding:64px 0 }
+    .section-title{ display:flex; align-items:center; justify-content:space-between; margin-bottom:20px }
+    .section-title h2{ font-family:Poppins,Inter; font-size: clamp(1.6rem, 4vw, 2.2rem); margin:0 }
+    .grid{ display:grid; gap:18px }
+    .grid.cols-3{ grid-template-columns: repeat(3, 1fr) }
+    .grid.cols-2{ grid-template-columns: repeat(2, 1fr) }
+
+    /* Skills */
+    .skill-chips{ display:flex; flex-wrap:wrap; gap:10px }
+    .skillbar{ background:var(--panel); border:1px solid var(--panel-light); border-radius:14px; padding:14px; }
+    .meter{ height:10px; background:rgba(255,255,255,0.12); border-radius:999px; overflow:hidden; margin-top:10px }
+    .meter > span{ display:block; height:100%; background:linear-gradient(90deg, var(--accent), var(--brand)); width:0 }
+    .meter[data-level="90"] > span{ width:90% }
+    .meter[data-level="80"] > span{ width:80% }
+    .meter[data-level="70"] > span{ width:70% }
+    .meter[data-level="60"] > span{ width:60% }
+
+    /* Projects */
+    .project{ overflow:hidden; position:relative }
+    .project .thumb{ border-radius:16px; overflow:hidden; border:1px solid var(--panel-light); aspect-ratio: 16/10; background: #111827 }
+    .project .thumb img{ width:100%; height:100%; object-fit:cover; opacity:.9 }
+    .project .meta{ padding:12px 6px 0 }
+    .project h3{ margin:8px 0 6px; font-size:1.1rem }
+    .row{ display:flex; gap:10px; flex-wrap:wrap }
+
+    /* Contact */
+    .contact-card{ display:grid; grid-template-columns: 1fr 1fr; gap:16px }
+    .contact-card a{ display:flex; align-items:center; justify-content:center; gap:10px }
+
+    /* Footer */
+    footer{ padding:28px 0 38px; color:var(--muted); border-top:1px solid var(--panel-light) }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid.cols-3{ grid-template-columns: 1fr 1fr }
+      .contact-card{ grid-template-columns: 1fr }
+    }
+    @media (max-width: 640px){
+      .grid.cols-3, .grid.cols-2{ grid-template-columns: 1fr }
+    }
+  </style>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">RP</div>
+        <div>Rishi Pathak</div>
+      </div>
+      <nav class="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="mode" class="btn ghost" title="Toggle theme">🌗 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div>
+        <span class="chip">BCA Graduate • Web Developer</span>
+        <h1>Hi, I'm <span style="color:var(--accent)">Rishi</span> —
+          <span id="type">Building clean, fast websites.</span>
+        </h1>
+        <p class="sub">Focused on front‑end and lightweight back‑end. Open to roles in India and Dubai — IT Support, Web Dev, and Junior Engineer positions.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">🚀 View Projects</a>
+          <a class="btn ghost" href="#contact">📩 Contact</a>
+          <a class="btn ghost" href="assets/Rishi_Pathak_CV.pdf" download>⬇️ Download CV</a>
+        </div>
+        <div class="row" style="margin-top:18px">
+          <div class="card stat"><span>💼</span><div><strong>6+</strong><div style="color:var(--muted)">Mini projects</div></div></div>
+          <div class="card stat"><span>⚡</span><div><strong>100%</strong><div style="color:var(--muted)">Responsive design</div></div></div>
+          <div class="card stat"><span>🌍</span><div><strong>Open</strong><div style="color:var(--muted)">to relocate</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="pfp">
+          <!-- Replace src with your photo -->
+          <img src="App medical/IMG-20240605-WA0007.jpg" alt="Rishi Pathak Portrait placeholder"</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <span class="chip">Based in India • Ready for Dubai</span>
+      </div>
+      <div class="card">
+        <p>
+          I'm a BCA graduate passionate about crafting user‑friendly interfaces and reliable back‑ends. I enjoy <strong>HTML, CSS, JavaScript</strong> on the front‑end and use <strong>Python/Node & SQL</strong> on the back‑end for small services. I care about clean code, accessibility, and performance.
+        </p>
+        <p style="color:var(--muted)">
+          When I'm not coding, I learn new tools, practice UI/UX, and explore tech that improves daily life.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <a class="chip" href="#contact">Available for freelance</a>
+      </div>
+
+      <div class="grid cols-3">
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>HTML & CSS</strong><span>Advanced</span>
+          </div>
+          <div class="meter" data-level="90"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>JavaScript</strong><span>Intermediate</span>
+          </div>
+          <div class="meter" data-level="80"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>Python</strong><span>Intermediate</span>
+          </div>
+          <div class="meter" data-level="70"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>SQL</strong><span>Intermediate</span>
+          </div>
+          <div class="meter" data-level="70"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>Git & GitHub</strong><span>Working</span>
+          </div>
+          <div class="meter" data-level="60"><span></span></div>
+        </div>
+        <div class="skillbar card">
+          <div style="display:flex; justify-content:space-between; align-items:center">
+            <strong>UI/UX</strong><span>Working</span>
+          </div>
+          <div class="meter" data-level="60"><span></span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="skill-chips">
+        <span class="chip">Responsive Design</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Basics of React</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Bootstrap/Tailwind</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <a class="chip" href="https://github.com/" target="_blank" rel="noopener">More on GitHub ↗</a>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="project card">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Screenshot placeholder 1"/>
+          </div>
+          <div class="meta">
+            <h3>Ayodhya Service — Booking Web App</h3>
+            <p style="color:var(--muted)">Hotel, car and restaurant booking MVP with responsive UI and simple JSON back‑end.</p>
+            <div class="row">
+              <a class="btn ghost" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost" href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project card">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Screenshot placeholder 2"/>
+          </div>
+          <div class="meta">
+            <h3>TransX — Simple Transaction App</h3>
+            <p style="color:var(--muted)">Android + Web dashboard concept to add, view and export transactions.</p>
+            <div class="row">
+              <a class="btn ghost" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost" href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project card">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Screenshot placeholder 3"/>
+          </div>
+          <div class="meta">
+            <h3>Portfolio Template — This Site</h3>
+            <p style="color:var(--muted)">Clean single‑file portfolio with dark/light mode, glassmorphism and animations.</p>
+            <div class="row">
+              <a class="btn ghost" href="#" target="_blank">Live Demo</a>
+              <a class="btn ghost" href="App medical/" target="_blank">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span class="chip">Let's build something great</span>
+      </div>
+      <div class="card contact-card">
+        <a class="btn ghost" href="djrxremix143@gmail.com">✉️ Email</a>
+        <a class="btn ghost" href="https://wa.me/917388385690" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="btn ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a class="btn ghost" href="tel:+91-7388385690">📞 Phone</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px">
+      <div>© <span id="year"></span> Rishi Pathak • Built with ❤️</div>
+      <div style="display:flex; gap:10px">
+        <a class="chip" href="#home">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Typewriter effect for roles
+    const words = [
+      "Building clean, fast websites.",
+      "Front‑end focused, back‑end ready.",
+      "Open to roles in Dubai.",
+    ];
+    let i=0;
+    function cycle(){
+      const el = document.getElementById('type');
+      el.style.opacity = 0;
+      setTimeout(()=>{ el.textContent = words[i = (i+1)%words.length]; el.style.opacity = 1;}, 250);
+    }
+    setInterval(cycle, 2600);
+
+    // Theme toggle with localStorage
+    const modeBtn = document.getElementById('mode');
+    const saved = localStorage.getItem('theme');
+    if(saved === 'light'){ document.documentElement.classList.add('light'); }
+    modeBtn.addEventListener('click', ()=>{
+      document.documentElement.classList.toggle('light');
+      localStorage.setItem('theme', document.documentElement.classList.contains('light')? 'light':'dark');
+    });
+
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll (basic)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
